@@ -11,6 +11,7 @@ import org.eclipse.jetty.http.HttpStatus;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.AbstractHandler;
+import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -80,11 +81,12 @@ public class Main extends AbstractHandler{
 
     }
 
-    public static void main( String[] args ) throws Exception
+	public static void main( String[] args ) throws Exception
     {
-        Server server = new Server(8080);
+        Server server = new Server(Integer.valueOf(System.getenv("PORT")));
+        ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
+        context.setContextPath("/");
         server.setHandler(new Main());
-
         server.start();
         server.join();
     }
