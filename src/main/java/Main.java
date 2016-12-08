@@ -14,7 +14,7 @@ import org.eclipse.jetty.server.handler.AbstractHandler;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class HelloWorld extends AbstractHandler{
+public class Main extends AbstractHandler{
 	private static final long serialVersionUID = 1L;
 	private String code="";
 	/* Request parameters*/
@@ -83,7 +83,7 @@ public class HelloWorld extends AbstractHandler{
     public static void main( String[] args ) throws Exception
     {
         Server server = new Server(8080);
-        server.setHandler(new HelloWorld());
+        server.setHandler(new Main());
 
         server.start();
         server.join();
