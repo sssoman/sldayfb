@@ -67,13 +67,13 @@ public class HelloWorld extends AbstractHandler{
 		}
 		}*/
 		// Declare response encoding and types
-        response.setContentType("text/html; charset=utf-8");
+		res.setContentType("text/html; charset=utf-8");
 
         // Declare response status code
-        response.setStatus(HttpServletResponse.SC_OK);
+        res.setStatus(HttpServletResponse.SC_OK);
 
         // Write back response
-        response.getWriter().println("<h1>Hello World</h1>");
+        res.getWriter().println("<h1>Hello World</h1>");
 
         // Inform jetty that this request has now been handled
         baseRequest.setHandled(true);
