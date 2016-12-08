@@ -1,1 +1,1 @@
-web:    java -jar target/hellottt.jar
+web:    java -jar target/helloworld.jar
